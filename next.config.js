@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 
-const prod = APP_ENV === 'production';
+const { NODE_ENV } = process.env;
+const prod = NODE_ENV === 'production';
 
 const nextConfig = {
   webpack(config) {
