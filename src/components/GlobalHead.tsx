@@ -9,6 +9,7 @@ const GlobalHead = () => {
       />
       <title>Next.js BoilerPlate</title>
       <meta name="description" content="Next.js BoilerPlate Project" />
+      <meta name="robots" content="index, follow" />
     </Head>
   );
 };
