@@ -1,3 +1,69 @@
 {
-  "extends": "next/core-web-vitals"
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": ["airbnb", "airbnb-typescript", "next", "next/core-web-vitals", "prettier"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "plugins": ["react", "@typescript-eslint"],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  },
+  "ignorePatterns": ["**/node_modules/**"],
+  "rules": {
+    "consistent-return": "off",
+    "max-len": ["error", { "code": 100, "ignoreTemplateLiterals": true }],
+    "radix": ["error", "as-needed"],
+    "no-empty": ["error", { "allowEmptyCatch": true }],
+    "no-underscore-dangle": "off",
+    "no-plusplus": "off",
+    "no-unused-vars": "off",
+    "no-useless-catch": "off",
+    "import/no-cycle": "off",
+    "arrow-body-style": "off",
+    "curly": "error",
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        "selector": "property",
+        "filter": "^__html$",
+        "format": null
+      },
+      {
+        "selector": "default",
+        "format": ["camelCase", "strictCamelCase", "PascalCase", "StrictPascalCase", "UPPER_CASE"],
+        "leadingUnderscore": "allow",
+        "trailingUnderscore": "allow"
+      }
+    ],
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      { "varsIgnorePattern": "^__", "argsIgnorePattern": "^__" }
+    ],
+    "prefer-destructuring": [
+      2,
+      {
+        "VariableDeclarator": { "array": true, "object": true },
+        "AssignmentExpression": { "array": true, "object": true }
+      },
+      { "enforceForRenamedProperties": false }
+    ],
+    "@typescript-eslint/no-explicit-any": "error",
+    "@typescript-eslint/no-empty-function": ["error"],
+    "react/require-default-props": "off",
+    "react/function-component-definition": [2, { "namedComponents": "arrow-function" }],
+    "react/jsx-filename-extension": [1, { "extensions": [".ts", ".tsx"] }]
+  }
 }
